@@ -16,12 +16,13 @@
   }
 
   img {
-    width: min(100%, 1200px);
+    width: min(90%, 1200px);
     margin-bottom: 2rem;
     filter: invert(1);
   }
 
   p {
+    width: min(70%, 480px);
     filter: invert(1);
   }
 }
