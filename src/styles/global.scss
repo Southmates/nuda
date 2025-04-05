@@ -42,6 +42,11 @@ h2 {
 h3 {
   font-size: clamp(32px, 2vw, 36px);
   margin-bottom: 2rem;
+  margin:0 auto 2rem auto;
+}
+
+p {
+  font-size: clamp(18px, 2vw, 21px);
 }
 
 ul {
@@ -65,10 +70,12 @@ section {
 
   width: 100%;
   gap: 1rem;
+
+  padding: 2rem 0;
 }
 
 .container {
   width: 90%;
   max-width: 960px;
-  margin: auto;
+  margin: 0 auto;
 }
