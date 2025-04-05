@@ -6,13 +6,13 @@
 }
 
 body {
-  font-family: "Helvetica Neue", sans-serif;
-  background: #fefefe;
+  font-family: "Cormorant Garamond", serif;
+  background: #e4e1e0;
   color: #111;
   line-height: 1.6;
   font-size: 16px;
-
   text-align: center;
+  padding: 1.5em 1.5em 0 1.5em;
 }
 
 a {
@@ -33,6 +33,9 @@ blockquote {
   line-height: 1.25;
 }
 
+section {
+  height: 90vh;
+}
 
 .section {
   display: flex;
@@ -41,7 +44,6 @@ blockquote {
   flex-direction: column;
 
   width: 100%;
-  height: 90vh;
   gap: 1rem;
 }
 

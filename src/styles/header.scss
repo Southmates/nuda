@@ -3,12 +3,16 @@ header {
   align-items: center;
   justify-content: space-between;
 
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
 
-  padding: 0 2em;
-  border-bottom: 1px dashed #ccc;
+  width: calc(100% - 0em);
+  margin: 2em auto 2em auto;
+
+  background-color: #e4e1e0;
+  border-bottom: 1px dashed #999;
+
+  padding: .5em;
 
   img {
     height: 40px;
