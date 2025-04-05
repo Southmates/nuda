@@ -1,0 +1,24 @@
+section.home {
+  padding: 4rem 1.5rem;
+  text-align: center;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .definition {
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+
+  .ingredients {
+    margin: 2rem 0;
+    font-weight: bold;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 1rem auto;
+  }
+}

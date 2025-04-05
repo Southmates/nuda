@@ -1,5 +1,5 @@
 ---
-import "../styles/global.scss";
+import '../main.scss';
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
 import MainContent from "../components/MainContent.astro";
@@ -13,10 +13,15 @@ import Footer from "../components/Footer.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <Header />
-    <Nav />
-    <MainContent />
-    <Contact />
-    <Footer />
+    <div class="lenis">
+      <Header />
+      <Nav />
+      <MainContent />
+      <Contact />
+      <Footer />
+    </div>
+
+    <script type="module" src="/src/scripts/scroll.js" />
+    <script type="module" src="/src/scripts/animations.js" />
   </body>
 </html>
