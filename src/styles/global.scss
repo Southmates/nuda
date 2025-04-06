@@ -14,9 +14,9 @@ body {
   text-align: center;
   padding: 0;
 
-  @media (width > 767px) {
-    padding: 1.5em 1.5em 0 1.5em;
-  }
+  // @media (width > 767px) {
+  //   padding: 1.5em 1.5em 0 1.5em;
+  // }
 }
 
 a {
@@ -42,7 +42,7 @@ h2 {
 h3 {
   font-size: clamp(32px, 2vw, 36px);
   margin-bottom: 2rem;
-  margin:0 auto 2rem auto;
+  margin: 0 auto 2rem auto;
 }
 
 p {

@@ -22,4 +22,11 @@ header {
   img {
     height: 40px;
   }
+
+}
+
+.header {
+  &-logo {
+    padding: 0 10px;
+  }
 }
