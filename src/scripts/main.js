@@ -12,6 +12,7 @@ const lenis = new Lenis({
 
 function raf(time) {
   lenis.raf(time);
+  ScrollTrigger.update();
   requestAnimationFrame(raf);
 }
 requestAnimationFrame(raf);
@@ -111,5 +112,37 @@ sections.forEach((section) => {
 function activateLink(id) {
   navLinks.forEach((link) => {
     link.classList.toggle("active", link.href.includes(`#${id}`));
+  });
+}
+
+// Scroll indicator for Hero section
+const scrollIndicator = document.getElementById("scroll-indicator");
+
+if (scrollIndicator) {
+  // Hide indicator when scrolling (with Lenis)
+  lenis.on("scroll", ({ scroll }) => {
+    if (scroll > 50) {
+      gsap.to(scrollIndicator, {
+        autoAlpha: 0,
+        y: 20,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    } else {
+      gsap.to(scrollIndicator, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    }
+  });
+
+  // Click to scroll to the next section
+  scrollIndicator.addEventListener("click", () => {
+    const nextSection = document.querySelector("#ingredients");
+    if (nextSection) {
+      lenis.scrollTo(nextSection, { offset: -40, duration: 1.2 });
+    }
   });
 }
