@@ -5,6 +5,25 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Loader Animation
+window.addEventListener("load", () => {
+  const tl = gsap.timeline();
+
+  tl.to(".loader-content .loader-text", {
+    opacity: 1,
+    duration: 1,
+    y: -30,
+    ease: "power2.out",
+  })
+    .to("#loader", {
+      opacity: 0,
+      duration: 0.8,
+      ease: "power2.inOut",
+      delay: 0.5,
+    })
+    .set("#loader", { display: "none" });
+});
+
 const lenis = new Lenis({
   smooth: true,
   lerp: 0.1,
