@@ -91,3 +91,25 @@ document.getElementById("scrollTopBtn")?.addEventListener("click", () => {
 // document.getElementById("scrollBottomBtn")?.addEventListener("click", () => {
 //   lenis.scrollTo(document.body.scrollHeight);
 // });
+
+// Activate menu link based on visible section (scrollspy light)
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll("nav a");
+
+ScrollTrigger.defaults({ toggleActions: "play none none reverse" });
+
+sections.forEach((section) => {
+  ScrollTrigger.create({
+    trigger: section,
+    start: "top center",
+    end: "bottom center",
+    onEnter: () => activateLink(section.id),
+    onEnterBack: () => activateLink(section.id),
+  });
+});
+
+function activateLink(id) {
+  navLinks.forEach((link) => {
+    link.classList.toggle("active", link.href.includes(`#${id}`));
+  });
+}
