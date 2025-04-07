@@ -1,28 +1,10 @@
 // scroll-animations.js
-import Lenis from "lenis";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import Lenis from "https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.mjs";
+
+import gsap from "https://cdn.skypack.dev/gsap";
+import ScrollTrigger from "https://cdn.skypack.dev/gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
-
-// Loader Animation
-window.addEventListener("load", () => {
-  const tl = gsap.timeline();
-
-  tl.to(".loader-content .loader-text", {
-    opacity: 1,
-    duration: 1,
-    y: -30,
-    ease: "power2.out",
-  })
-    .to("#loader", {
-      opacity: 0,
-      duration: 0.8,
-      ease: "power2.inOut",
-      delay: 0.5,
-    })
-    .set("#loader", { display: "none" });
-});
 
 const lenis = new Lenis({
   smooth: true,
@@ -107,11 +89,6 @@ document.getElementById("scrollTopBtn")?.addEventListener("click", () => {
   lenis.scrollTo(0);
 });
 
-// Scroll to bottom (using document.body.scrollHeight)
-// document.getElementById("scrollBottomBtn")?.addEventListener("click", () => {
-//   lenis.scrollTo(document.body.scrollHeight);
-// });
-
 // Activate menu link based on visible section (scrollspy light)
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll("nav a");
@@ -165,3 +142,55 @@ if (scrollIndicator) {
     }
   });
 }
+
+// --- MASTER TIMELINE ---
+const master = gsap.timeline({
+  paused: true,
+  defaults: { ease: "power2.out" },
+  onComplete: () => {
+    lenis.start();
+  },
+});
+
+// 🌀 1. Loader Animation
+master
+  .to(".loader-content .loader-text", {
+    opacity: 1,
+    duration: 1,
+    y: -30,
+    ease: "power2.out",
+  })
+  .to("#loader", {
+    opacity: 0,
+    duration: 0.8,
+    ease: "power2.inOut",
+    delay: 0.5,
+  })
+  .set("#loader", { display: "none" });
+
+// ✨ 2. Hero Animation (cuando loader termina)
+master
+  .from(
+    ".hero-title",
+    {
+      y: 40,
+      opacity: 0,
+      duration: 1,
+    },
+    "-=0.6"
+  )
+  .from(
+    ".hero-subtitle",
+    {
+      y: 40,
+      opacity: 0,
+      duration: 1,
+    },
+    "-=0.8"
+  );
+
+// Lanzamos todo
+window.addEventListener("DOMContentLoaded", () => {
+  console.log("object");
+  master.play();
+});
