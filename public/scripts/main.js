@@ -1,6 +1,4 @@
-// scroll-animations.js
 import Lenis from "https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.mjs";
-
 import gsap from "https://cdn.skypack.dev/gsap";
 import ScrollTrigger from "https://cdn.skypack.dev/gsap/ScrollTrigger";
 
