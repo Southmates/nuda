@@ -8,6 +8,8 @@
   // height: calc(100svh - 3em);
   height: 100svh;
   background: #464243;
+  position: relative;
+  z-index: 2;
 
   h1 {
     opacity: 0;

@@ -46,6 +46,25 @@ gsap.from(".fade-in", {
   },
 });
 
+// Aparece con fade-up cuando entra en pantalla
+gsap.utils.toArray(".fade-up").forEach((el) => {
+  gsap.fromTo(
+    el,
+    { opacity: 0, y: 30 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },
+    }
+  );
+});
+
 // Anchors links w/ Lenis
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (e) => {
@@ -62,3 +81,13 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     }
   });
 });
+
+// Scroll to top
+document.getElementById("scrollTopBtn")?.addEventListener("click", () => {
+  lenis.scrollTo(0);
+});
+
+// Scroll to bottom (using document.body.scrollHeight)
+// document.getElementById("scrollBottomBtn")?.addEventListener("click", () => {
+//   lenis.scrollTo(document.body.scrollHeight);
+// });

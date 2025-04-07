@@ -79,3 +79,22 @@ section {
   max-width: 960px;
   margin: 0 auto;
 }
+
+.btn {
+  all: unset;
+  border-bottom: 1px dashed #999;
+  padding: 1rem 0;
+  font-size: 16px;
+
+  position: fixed;
+  bottom: 2vw;
+  right: 2vw;
+  z-index: 1;
+
+  // text-transform: uppercase;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
