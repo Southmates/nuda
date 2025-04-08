@@ -1,6 +1,6 @@
-import Lenis from "https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.mjs";
 import gsap from "https://cdn.skypack.dev/gsap";
 import ScrollTrigger from "https://cdn.skypack.dev/gsap/ScrollTrigger";
+import Lenis from "https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.mjs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,6 +45,29 @@ gsap.from(".fade-in", {
     toggleActions: "play none none reverse",
   },
 });
+
+// Desvanece el hero-content al hacer scroll
+// gsap.to(".hero-content", {
+//   scrollTrigger: {
+//     trigger: ".hero",
+//     start: "top top",
+//     end: "bottom top",
+//     scrub: true,
+//   },
+//   opacity: 0,
+//   y: -50,
+// });
+
+// Parallax de la siguiente sección (opcional para dar más onda)
+// gsap.from(".next-section", {
+//   scrollTrigger: {
+//     trigger: ".next-section",
+//     start: "top bottom",
+//     end: "top top",
+//     scrub: true,
+//   },
+//   y: 100,
+// });
 
 // Aparece con fade-up cuando entra en pantalla
 gsap.utils.toArray(".fade-up").forEach((el) => {

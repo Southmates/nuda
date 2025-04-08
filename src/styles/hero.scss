@@ -5,29 +5,51 @@
   flex-direction: column;
 
   width: 100%;
-  // height: calc(100svh - 3em);
   height: 100svh;
   background: #464243;
   position: relative;
-  z-index: 2;
+  overflow: hidden;
+  // z-index: 2;
 
-  h1 {
-    opacity: 0;
-    height: 0;
-    visibility: hidden;
-  }
+  .hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-  img {
-    width: min(90%, 1200px);
-    margin-bottom: 2rem;
-    filter: invert(1);
-  }
+    width: 100%;
+    height: 100%;
 
-  p {
-    width: min(70%, 620px);
-    filter: invert(1);
+    h1 {
+      opacity: 0;
+      height: 0;
+      visibility: hidden;
+    }
+
+    img {
+      width: min(90%, 1200px);
+      margin-bottom: 2rem;
+      filter: invert(1);
+    }
+
+    p {
+      width: min(70%, 620px);
+      filter: invert(1);
+    }
   }
 }
+
+.hero-content {
+  z-index: 2;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+// .next-section {
+//   position: relative;
+//   background: #fff;
+//   padding: 10vh 5vw;
+//   z-index: 1;
+// }
 
 // Visual "helper" to better UX, this is a Scroll indicator 
 .scroll-indicator {
