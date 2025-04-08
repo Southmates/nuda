@@ -77,11 +77,10 @@ section {
   justify-content: center;
   align-items: start;
   flex-direction: column;
-
-  width: 100%;
   gap: 1rem;
 
-  padding: 2rem 0;
+  width: 100%;
+  min-height: 100svh;
 }
 
 .container {
