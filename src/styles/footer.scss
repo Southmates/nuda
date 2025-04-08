@@ -23,10 +23,11 @@
   }
 
   img {
-    max-width: 240px;
+    width: clamp(240px, 35vw, 320px);
   }
 
   h3 {
+    font-size: clamp(32px, 5vw, 40px);
     span {
       display: none;
     }

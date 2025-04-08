@@ -62,5 +62,12 @@
   p {
     max-width: 480px;
     margin: 0 auto 1rem auto;
+  } 
+
+  h2.p{
+    // font-size: clamp(21px, 2.5vw, 24px);
+    // max-width: 720px;
+    margin: 0px auto;
+    width: 95%;
   }
 }
