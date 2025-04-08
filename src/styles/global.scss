@@ -5,18 +5,27 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Cormorant Garamond", serif;
-  background: #e4e1e0;
-  color: #111;
-  line-height: 1.6;
-  font-size: 16px;
-  text-align: center;
-  padding: 0;
+:root {
+  --color-dark: #464243;
+  --color-light: #e4e1e0;
+}
 
-  // @media (width > 767px) {
-  //   padding: 1.5em 1.5em 0 1.5em;
-  // }
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-light);
+
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+  line-height: 1.35;
+
+  text-align: center;
+  color: var(--color-dark);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -27,8 +36,8 @@ a {
 h1,
 h2,
 h3 {
+  font-family: "EB Garamond", serif;
   font-weight: normal;
-  line-height: 1.2;
 }
 
 h1 {
@@ -36,7 +45,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(40px, 2.75vw, 48px);
+  font-size: clamp(32px, 5vw, 48px);
 }
 
 h3 {
@@ -46,6 +55,7 @@ h3 {
 }
 
 p {
+  font-family: "EB Garamond", serif;
   font-size: clamp(18px, 2vw, 21px);
 }
 
@@ -75,14 +85,13 @@ section {
 }
 
 .container {
-  width: 90%;
+  width: 92%;
   max-width: 960px;
   margin: 0 auto;
 }
 
 .btn {
   all: unset;
-  border-bottom: 1px dashed #999;
   padding: 1rem 0;
   font-size: 16px;
 
